@@ -74,6 +74,42 @@ body{
     
     width: 40px;
 }
+.cat{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    flex-direction: column;
+    
+    
+      &::after {
+        content: "";
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(8px); 
+        z-index: -1;
+    }
+}
+button{
+    width: 150px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: transparent;
+    
+    font-size: 20px;
+}
+button:active{
+    background-image:linear-gradient(#ffffff,#232344);
+    
+}
 .searching{
     height: 100%;
     width: 80%;
