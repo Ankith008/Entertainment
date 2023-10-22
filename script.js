@@ -550,16 +550,19 @@ let ulog = document.querySelector(".ulog");
 ulog.addEventListener("click", refreshing)
 
 let uhom = document.querySelector(".uhom");
+let cat = document.querySelector(".cat");
 uhom.addEventListener("click", function () {
-    window.location.href = "index.html";
+    cat.style.display = "flex";
 })
+
+
 
 
 
 function searchfunction(data, text) {
     innercontainer.innerHTML = "";
     data.forEach(element => {
-        if (element.title.toLowerCase() == text.toLowerCase()) {
+        if (element.title.toLowerCase().includes(text.toLowerCase())) {
 
             let newdiv1 = document.createElement("div");
             newdiv1.classList.add("dataas")
@@ -654,9 +657,11 @@ function searchfunction(data, text) {
             newdiv1.appendChild(newplay);
             newdiv1.appendChild(newdetail);
             innercontainer.appendChild(newdiv1);
+            innercontainer.classList.add("content");
         }
     });
 }
+
 
 var input = document.querySelector("input");
 input.addEventListener("keydown",(event)=>{
@@ -700,3 +705,33 @@ ubook.addEventListener("click", function () {
     tv.style.display = "none";
 });
 
+let mov = document.querySelector(".mov");
+let tvse = document.querySelector(".tvse");
+let bookmark = document.querySelector(".bookmark");
+
+mov.addEventListener("click", function () {
+    cat.style.display = "none";
+    onlymovies(data);
+    innercontainer.classList.add("content");
+    movies.style.display = "flex";
+    booked.style.display = "none";
+    tv.style.display = "none";
+});
+
+tvse.addEventListener("click", function () {
+    onlytv(data);
+    cat.style.display = "none";
+    innercontainer.classList.add("content");
+    tv.style.display = "flex";
+    movies.style.display = "none";
+    booked.style.display = "none";
+});
+
+bookmark.addEventListener("click", function () {
+    onlybook(data);
+    cat.style.display = "none";
+    innercontainer.classList.add("content");
+    movies.style.display = "none";
+    booked.style.display = "flex";
+    tv.style.display = "none";
+})
