@@ -561,103 +561,99 @@ function searchfunction(data, text) {
     data.forEach(element => {
         if (element.title.toLowerCase() == text.toLowerCase()) {
 
-            let searchresult = document.createElement("div");
-            searchresult.classList.add("searchresult");
+            let newdiv1 = document.createElement("div");
+            newdiv1.classList.add("dataas")
 
-            let paras = document.createElement("p");
-            paras.classList.add("searches");
-            paras.textContent = "Search Results";
+            let img2add = document.createElement("img");
+            img2add.classList.add("img2add");
+            img2add.src = element.thumbnail.regular.large;
 
-            let searchpic = document.createElement("img");
-            searchpic.classList.add("searchpic");
-            searchpic.src = element.thumbnail.regular.large;
-
-            let searchfavimgs = document.createElement("img")
-            searchfavimgs.classList.add("searchfavs");
+            let favimgs = document.createElement("img")
+            favimgs.classList.add("favs");
                 
             if (element.isBookmarked) {
-                searchfavimgs.src = "icon-bookmark-full.svg"
+                favimgs.src = "icon-bookmark-full.svg"
             } else {
-                searchfavimgs.src = "icon-bookmark-empty.svg";
+                favimgs.src = "icon-bookmark-empty.svg";
             }
-
-            let searchnewtype = document.createElement("img");
-            searchnewtype.classList.add("newtype");
-            if (element.category == "Movie") {
-                searchnewtype.src = "icon-category-movie.svg";
-            } else {
-                searchnewtype.src = "icon-category-tv.svg";
-            }
-            let searchnewwhich = document.createElement("p");
-            searchnewwhich.classList.add("which");
-            searchnewwhich.textContent = element.category;
-
-            let searchnewrate = document.createElement("p");
-            searchnewrate.classList.add("rate");
-            searchnewrate.textContent = element.rating;
-
-            let searchnewname = document.createElement("p");
-            searchnewname.classList.add("newname");
-            searchnewname.textContent = element.title;
-
-            let searchnewplay = document.createElement("div");
-            searchnewplay.classList.add("newplay");
                 
-            let searchnewplayimg = document.createElement("img");
-            searchnewplayimg.classList.add("newplayimg");
-            searchnewplayimg.src = "icon-play.svg";
-
-            let searchnewplaycontent = document.createElement("p");
-            searchnewplaycontent.classList.add("newplaycontent");
-            searchnewplaycontent.textContent = "Play";
-
-            searchfavimgs.addEventListener("click", function () {
+            favimgs.addEventListener("click", function () {
                 if (element.isBookmarked) {
                     element.isBookmarked = false
-                    searchfavimgs.src = "icon-bookmark-empty.svg";
+                    favimgs.src = "icon-bookmark-empty.svg";
                 } else {
                     element.isBookmarked = true;
-                    searchfavimgs.src = "icon-bookmark-full.svg";
+                    favimgs.src = "icon-bookmark-full.svg";
                 }
             });
 
-            let searchnewdetail = document.createElement("div");
-            searchnewdetail.classList.add("newdetail");
+            let newdetail = document.createElement("div");
+            newdetail.classList.add("newdetail");
 
-            let searchnewdetail1 = document.createElement("div");
-            searchnewdetail1.classList.add("newdetail1");
+            let newdetail1 = document.createElement("div");
+            newdetail1.classList.add("newdetail1");
 
-            let searchnewdetail2 = document.createElement("div");
-            searchnewdetail2.classList.add("newdetail2");
+            let newdetail2 = document.createElement("div");
+            newdetail2.classList.add("newdetail2");
                 
-            let searchnewdot1 = document.createElement("div");
-            searchnewdot1.classList.add("newdot1");
-            searchnewdot1.textContent = ".";
+            let newdot1 = document.createElement("div");
+            newdot1.classList.add("newdot1");
+            newdot1.textContent = ".";
                 
-            let searchnewdot2 = document.createElement("div");
-            searchnewdot2.classList.add("newdot2");
-            searchnewdot2.textContent = ".";
+            let newdot2 = document.createElement("div");
+            newdot2.classList.add("newdot2");
+            newdot2.textContent = ".";
 
-            let searchnewdate = document.createElement("p");
-            searchnewdate.classList.add("newdatep");
-            searchnewdate.textContent = element.year;
+            let newdate = document.createElement("p");
+            newdate.classList.add("newdatep");
+            newdate.textContent = element.year;
                 
-            
-            searchresult.appendChild(searchpic);
-            searchresult.appendChild(searchfavimgs);
-            searchnewdetail1.appendChild(searchnewdate);
-            searchnewdetail1.appendChild(searchnewdot2);
-            searchnewdetail1.appendChild(searchnewtype);
-            searchnewdetail1.appendChild(searchnewwhich);
-            searchnewdetail1.appendChild(searchnewdot1);
-            searchnewdetail1.appendChild(searchnewrate);
-            searchnewdetail2.appendChild(searchnewname);
-            searchnewdetail.appendChild(searchnewdetail1);
-            searchnewdetail.appendChild(searchnewdetail2);
-            
-            innercontainer.appendChild(paras);
-            innercontainer.appendChild(searchresult);
-            innercontainer.appendChild(searchnewdetail);
+            let newtype = document.createElement("img");
+            newtype.classList.add("newtype");
+            if (element.category == "Movie") {
+                newtype.src = "icon-category-movie.svg";
+            } else {
+                newtype.src = "icon-category-tv.svg";
+            }
+            let newwhich = document.createElement("p");
+            newwhich.classList.add("which");
+            newwhich.textContent = element.category;
+
+            let newrate = document.createElement("p");
+            newrate.classList.add("rate");
+            newrate.textContent = element.rating;
+
+            let newname = document.createElement("p");
+            newname.classList.add("newname");
+            newname.textContent = element.title;
+
+            let newplay = document.createElement("div");
+            newplay.classList.add("newplay");
+                
+            let newplayimg = document.createElement("img");
+            newplayimg.classList.add("newplayimg");
+            newplayimg.src = "icon-play.svg";
+
+            let newplaycontent = document.createElement("p");
+            newplaycontent.classList.add("newplaycontent");
+            newplaycontent.textContent = "Play";
+                
+            newdiv1.appendChild(img2add);
+            newdiv1.appendChild(favimgs);
+            newdetail1.appendChild(newdate);
+            newdetail1.appendChild(newdot2);
+            newdetail1.appendChild(newtype);
+            newdetail1.appendChild(newwhich);
+            newdetail1.appendChild(newdot1);
+            newdetail1.appendChild(newrate);
+            newdetail2.appendChild(newname);
+            newdetail.appendChild(newdetail1);
+            newdetail.appendChild(newdetail2);
+            newplay.appendChild(newplayimg);
+            newplay.appendChild(newplaycontent);
+            newdiv1.appendChild(newplay);
+            newdiv1.appendChild(newdetail);
+            innercontainer.appendChild(newdiv1);
         }
     });
 }
