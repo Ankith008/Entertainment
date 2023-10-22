@@ -559,7 +559,7 @@ uhom.addEventListener("click", function () {
 function searchfunction(data, text) {
     innercontainer.innerHTML = "";
     data.forEach(element => {
-        if (element.title == text) {
+        if (element.title.toLowerCase() == text.toLowerCase()) {
 
             let searchresult = document.createElement("div");
             searchresult.classList.add("searchresult");
